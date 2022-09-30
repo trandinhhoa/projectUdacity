@@ -50,7 +50,7 @@ const LibraryContainer = ({books, updateBooks, updateBook}) => {
 					</div>
 				</div>
 				<div className="open-search">
-					<Link to='/search'>Add a book</Link>
+					<Link to='/search'>Search a book</Link>
 				</div>
 			</div>
 
