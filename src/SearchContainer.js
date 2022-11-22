@@ -12,12 +12,12 @@ const SearchContainer = ({ booksResults, updateBooks, searchBook, updateBook }) 
 	}
 
 	const handleChange = (query) => {
-		if(query.trim().length === 0){
+		 if(query.trim().length === 0){
 			updateBooks('books')
 			searchBook(query.trim())
-		}else {
-			searchBook(query.trim())
-		}
+		 }else {
+		 	searchBook(query.trim())
+		 }
 	}
 
 	return (

@@ -19,19 +19,21 @@ class BooksApp extends React.Component {
 
     searchBook = (query) => {
         if(query.length > 0) {
-            BooksAPI.search (query, 10).then((books) => {
-                this.setState({books: books.map( (bookItem) => {
-                    let combinedItem = this.state.all.find(( allItem )=>{
-                        if(bookItem.id === allItem.id){
-                            return {...bookItem, shelf: allItem.shelf}
+            BooksAPI.search (query).then((books) => {
+                if(books.length > 0){                          
+                    this.setState({books: books.map( (bookItem) => {
+                        let combinedItem = this.state.all.find(( allItem )=>{
+                            if(bookItem.id === allItem.id){
+                                return {...bookItem, shelf: allItem.shelf}
+                            }
+                        })
+                        if (combinedItem === undefined){
+                            return bookItem
+                        }else{
+                            return combinedItem
                         }
-                    })
-                    if (combinedItem === undefined){
-                        return bookItem
-                    }else{
-                        return combinedItem
-                    }
-                })})
+                    })})
+                }
             });
         } 
     }
