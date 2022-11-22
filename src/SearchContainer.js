@@ -31,6 +31,7 @@ const SearchContainer = ({ booksResults, updateBooks, searchBook, updateBook }) 
 								return <ListBook
 											key={book.id}
 											shelf={book.shelf}
+											noneShelf={true}
 											book={book}
 											changeShelf={changeShelf}	
 										/>
